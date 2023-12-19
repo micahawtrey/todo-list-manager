@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %}Project List{% endblock title %}
+
+{% block main %}
+<main>
+    <div>
+        <h1>My Projects</h1>
+        {% if projects %}
+            <table>
+                <thead>
+                    <tr>
+                        <td>Name</td>
+                        <td>Number of tasks</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for project in projects %}
+                        <tr>
+                            <td>{{ project.name }}</td>
+                            <td></td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% else %}
+            <p>You are not assigned to any projects</p>
+        {% endif %}
+    </div>
+</main>
+{% endblock main %}
