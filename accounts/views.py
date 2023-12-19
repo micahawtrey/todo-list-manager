@@ -21,3 +21,8 @@ def signin(request):
         "form": form,
     }
     return render(request, "accounts/login.html", context)
+
+def signout(request):
+    logout(request)
+
+    return redirect("login")
