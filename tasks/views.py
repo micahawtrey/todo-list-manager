@@ -3,6 +3,7 @@ from tasks.forms import TaskForm
 from django.contrib.auth.decorators import login_required
 from tasks.models import Task
 
+
 # Create your views here.
 @login_required
 def create_task(request):
@@ -15,9 +16,10 @@ def create_task(request):
     else:
         form = TaskForm()
     context = {
-            "form": form,
-        }
+        "form": form,
+    }
     return render(request, "tasks/create_task.html", context)
+
 
 @login_required
 def show_my_tasks(request):
